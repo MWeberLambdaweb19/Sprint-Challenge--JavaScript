@@ -52,7 +52,6 @@ console.log(stego.length);
 // What time period did tyrannosaurus live in?
 console.log(trex.period);
 
-
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
 console.log(trex.roar());
 
@@ -97,8 +96,10 @@ console.log(contactInfo);
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
 for (let i = 0; i < graduates.length; i++) {
-    uni.push(graduates[i].university === "Uni");
+    if (graduates[i].university.includes("Uni")){
+      uni.push(graduates[i].university);
   };
+}
 console.log(uni);
 
 
@@ -125,7 +126,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 */
 const animalNames = [];
 let scihab = zooAnimals.forEach(function(i){
-  animalNames.push(`name: ${i.animal_name} + " " + Scientific ${i.scientific_name}`)
+  animalNames.push(`Name: ${i.animal_name}, Scientific: ${i.scientific_name}`)
 })
 console.log(animalNames);
 
@@ -167,4 +168,3 @@ console.log(populationTotal);
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
-
