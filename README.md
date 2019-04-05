@@ -42,7 +42,7 @@ Closure is very similar in the sense of scope, in that they both entail what a p
 
 4. Describe the four rules of the 'this' keyword.
 
-Window-binding: Seldom used, is bound to the Global scope (meaning it is attached to the environment that holds the entire JS file), if you were to console log `this`, you would log the entirety of JS. Implicit binding is when a `this` keyword is bound to an object that is followed by a function. New binding within a constructor function suppliments the properties brought by the `new` Object and returns it through the properties provided by the constructor function. Explicit binding iw when we use the .call or .apply methods, which could link constructor functions to child constructor functions. 
+Window-binding: Seldom used, is bound to the Global scope (meaning it is attached to the environment that holds the entire JS file), if you were to console log `this`, you would log the entirety of JS. Implicit binding is when a `this` keyword is bound to an object that is followed by a function. New binding within a constructor function suppliments the properties brought by the `new` Object and returns it through the properties provided by the constructor function. Explicit binding iw when we use the .call or .apply methods, which could link constructor functions to child constructor functions.   
 
 5. Why do we need super() in an extended class?
 

@@ -55,7 +55,6 @@ console.log(trex.period);
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
 console.log(trex.roar());
 
-
 // ==== Arrays ====
 
 // Given an array of college graduates.  Complete the following requests WITHOUT using any array methods like .forEach(), .map(), .reduce(), .filter()
@@ -124,11 +123,23 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+// const animalNames = [];
+// let scihab = zooAnimals.forEach(function(i){
+//   animalNames.push(`Name: ${i.animal_name}, Scientific: ${i.scientific_name}`);
+// });
+
 const animalNames = [];
-let scihab = zooAnimals.forEach(function(i){
-  animalNames.push(`Name: ${i.animal_name}, Scientific: ${i.scientific_name}`)
-})
+let namesci = zooAnimals.forEach(function(i){
+  animalNames.push(`Name: ${i.animal_name}, Scientific: ${i.scientific_name}`);
+});
+
 console.log(animalNames);
+
+const animalNamesStretch = [];
+let namesciStretch = zooAnimals.forEach((i) => {
+  animalNamesStretch.push("Name: "+ i.animal_name + ", Scientific: " + i.scientific_name);
+});
+console.log(animalNamesStretch);
 
 /* Request 2: .map()    
 
@@ -136,32 +147,45 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-// const lowerCase = [];
-const lowerCase = zooAnimals.map((lowcase) => {
+const lowerCase = zooAnimals.map(function(i){
+  return (i.animal_name.toLowerCase());
+});
+console.log(lowerCase);
+const lowerCaseStretch = zooAnimals.map((lowcase) => {
   return lowcase.animal_name.toLowerCase();
 });
-console.log(lowerCase); 
+console.log(lowerCaseStretch); 
 
 /* Request 3: .filter() 
 
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = zooAnimals.filter((populate) => {
-  return populate.population < 5;
+const largerPopulation = zooAnimals.filter(function(i){
+  return i.population < 5;
 });
 console.log(largerPopulation);
+
+const largerPopulationStretch = zooAnimals.filter((populate) => {
+  return populate.population < 5;
+});
+console.log(largerPopulationStretch);
 
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = zooAnimals.reduce((acc, popamount) => {
-  return acc + popamount.population;
+const populationTotal = zooAnimals.reduce(function(acc, i) {
+  return acc + i.population;
 }, 0);
 console.log(populationTotal);
 
+const populationTotalStretch = zooAnimals.reduce((acc, popamount) => {
+  return acc + popamount.population;
+}, 0);
+
+console.log(populationTotalStretch);
 
 /* 
 
